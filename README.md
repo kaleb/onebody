@@ -99,6 +99,13 @@ Now visit the site running in development mode at http://localhost:3000.
 
 Now visit the site running in development mode at http://localhost:3000.
 
+### Docker Setup
+
+1. `docker run --name onebody_db -e MYSQL_PASSWORD=onebody -e MYSQL_USER=onebody -e MYSQL_RANDOM_ROOT_PASSWORD=yes -e MYSQL_DATABASE=onebody -d mysql`
+2. `docker build -t onebody_app .`
+3. `docker run --rm -it -p8888:80 --link onebody_db:mysql onebody_app bash`
+4.
+
 ### Tests
 
 To run tests:
